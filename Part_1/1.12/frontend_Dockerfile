@@ -1,0 +1,29 @@
+FROM ubuntu:latest
+
+WORKDIR /app
+COPY . /app
+
+EXPOSE 5000/tcp
+
+RUN apt update && apt install -y curl 
+RUN curl -sL https://deb.nodesource.com/setup_10.x | bash
+RUN apt install -y nodejs
+RUN npm install
+
+ENV API_URL=http://172.17.0.3:8000
+CMD npm start
+
+
+# Or alternative way:
+#
+# FROM node:10
+#
+# WORKDIR /app
+# COPY . /app
+# 
+# EXPOSE 5000/tcp
+#
+# RUN npm install
+#
+# ENV API_URL=http://172.17.0.3:8000
+# CMD npm start

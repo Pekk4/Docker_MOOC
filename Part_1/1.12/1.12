@@ -1,0 +1,7 @@
+# Commands used to run:
+
+docker run -d --rm frontend
+
+docker run -d --rm -v $(pwd)/logs.txt:/app/logs.txt backend
+
+# Did not publish ports, because noticed it is not necessary nor even required in this exercise. Was not sure about the logs either, but at least there is no disadvantages saving it. 

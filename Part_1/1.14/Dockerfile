@@ -10,4 +10,3 @@ RUN bundle install
 
 RUN rails db:migrate
 CMD rails s
-

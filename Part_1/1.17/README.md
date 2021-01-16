@@ -1,7 +1,6 @@
 Docker hub link: https://hub.docker.com/r/p3xu/apache2-php
 
-Haven't programmed very much yet, so neither have I particular 'favorite programming environment' either (yet). However, didn't want to skip this exercise and because I have made some small scale PHP applications in the early 2010s, I decided to create the environment t$
-I used the sqlite instead of mysql this time (although there is also php's mysql-extension installed), because it would be a way smarter to use mysql from it's own container and I'm not familiar yet with using compose.
+Haven't programmed very much yet, so neither have I particular 'favorite programming environment' either (yet). However, didn't want to skip this exercise and because I have made some small scale PHP applications in the early 2010s, I decided to create the environment I used the sqlite instead of mysql this time (although there is also php's mysql-extension installed), because it would be a way smarter to use mysql from it's own container and I'm not familiar yet with using compose.
 
 Image's readme:
 

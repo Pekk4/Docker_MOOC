@@ -10,4 +10,4 @@ and the bottom bar filled easily before the first on depleted, so I tried also:
 docker-compose up --scale compute=2
 ```
 
-![ss.png](screenshot)
+![screenshot](ss.png)

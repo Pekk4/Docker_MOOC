@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  frontend:
+    image: 23_frontend
+    ports:
+      - 5000:5000
+
+  backend:
+    image: 23_backend
+    ports:
+      - 8080:8080
+    environment:
+      - REDIS_HOST=redis
+
+  redis:
+    image: redis:latest
+
+# Used images from previous exercise for front- and backend, see the files in ../2.3/ if necessary.

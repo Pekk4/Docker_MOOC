@@ -1,0 +1,30 @@
+version: '3'
+
+services:
+  frontend:
+    image: 23_frontend
+    ports:
+      - 5000:5000
+
+  backend:
+    image: 23_backend
+    ports:
+      - 8080:8080
+    environment:
+      - REDIS_HOST=redis
+      - POSTGRES_HOST=backend_db
+      - POSTGRES_USER=devopswdocker
+      - POSTGRES_PASSWORD=surströmming
+      - POSTGRES_DATABASE=backend_db
+
+  redis:
+    image: redis:latest
+
+  backend_db:
+    image: postgres:latest
+    environment:
+      - POSTGRES_USER=devopswdocker
+      - POSTGRES_PASSWORD=surströmming
+      - POSTGRES_DB=backend_db
+
+# Same as in 2.4, used images from 2.3 and just extended this docker-compose.yml from 2.4

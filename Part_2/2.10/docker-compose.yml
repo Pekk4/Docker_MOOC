@@ -1,0 +1,47 @@
+version: '3'
+
+services:
+  frontend:
+    image: 23_frontend
+    ports:
+      - 5000:5000
+    environment:
+      - REACT_APP_BACKEND_URL=http://localhost:8080
+
+  backend:
+    image: 23_backend
+    ports:
+      - 8080:8080
+    environment:
+      - REDIS_HOST=redis
+      - POSTGRES_HOST=backend_db
+      - POSTGRES_USER=devopswdocker
+      - POSTGRES_PASSWORD=surströmming
+      - POSTGRES_DATABASE=backend_db
+      - REQUEST_ORIGIN=http://localhost
+
+  redis:
+    image: redis:latest
+    command: redis-server --appendonly yes
+    volumes:
+      - ./redis:/data
+
+  backend_db:
+    image: postgres:latest
+    environment:
+      - POSTGRES_USER=devopswdocker
+      - POSTGRES_PASSWORD=surströmming
+      - POSTGRES_DB=backend_db
+    volumes:
+      - ./database:/var/lib/postgresql/data
+
+  nginx:
+    image: nginx:latest
+    volumes:
+      - $PWD/nginx.conf:/etc/nginx/nginx.conf
+    ports:
+      - 80:80
+
+# Still using 2.3 images, so Dockerfiles are exactly the same as they were in the exercise 2.3.
+# Only thing that I had to change was to set backend's REQUEST_ORIGIN env value to just localhost without frontend's port,
+# because of nginx the request now comes from it instead of frontend or something, I think.

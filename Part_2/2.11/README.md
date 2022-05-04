@@ -1,0 +1,5 @@
+I have utilized containers as development environment mostly with PHP and Flask apps.
+
+I haven't done anything with PHP for years (10+) and decided to play with it a little some time ago. However, I didn't want to install PHP or any of the databases locally, so containers served the perfect solution for that. With mounting the volume it was not necessary to install & configure Git nor anything else in the container, but just develop the app locally and serve the files from container, to see everything works as expected.
+
+Later I started doing the course TKT20011 Database Application and in the beginning I developed that in the container too, but noticed that unit testing and stuff like that was little annoying when they always needed their own terminal or something, so I stopped using containers with it. Despite of that the PostgreSQL is still running in the container and with restart-flag always it is very handy. One can just power on the computer and start writing the code, the database is always ready when one runs the app which connects to it.

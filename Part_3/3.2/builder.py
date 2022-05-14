@@ -4,8 +4,7 @@ import docker
 from os import getenv
 
 
-USER = getenv("DHUB_USER")
-
+user = getenv("DHUB_USER")
 client = docker.from_env()
 
 
@@ -20,7 +19,7 @@ def clone_repository(url):
 
 def build_container(name):
     global tag
-    tag = USER + "/" + name
+    tag = user + "/" + name
 
     print("Building container...")
 
@@ -35,7 +34,7 @@ def login_docker_hub():
 
     print("Logging into Docker Hub...")
 
-    client.login(USER, token)
+    client.login(user, token)
 
 def push_container():
     print("Pushing container to Docker Hub...")

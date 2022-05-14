@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+  builder:
+    build: "."
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    environment:
+      - DHUB_USER=${DHUB_USER}
+      - DHUB_TOKEN=${DHUB_TOKEN}

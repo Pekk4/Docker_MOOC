@@ -1,13 +1,13 @@
 # Instructions
 
-First, set your Docker Hub username and token to `.env` file:
+First, clone the repository. Then set your Docker Hub username and token to `.env` file:
 
 ```
 DHUB_USER=<username>
 DHUB_TOKEN=<token>
 ```
 
-Then clone the repository and build it:
+Next, build the container:
 
 ```bash
 docker-compose build
